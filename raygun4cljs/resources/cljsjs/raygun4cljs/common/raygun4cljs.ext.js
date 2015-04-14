@@ -13,9 +13,9 @@ var Raygun;
 
 
 /**
- * @param {string} 			  key
- * @param {?Object}	     	  options
- * @param {?Object|?function()} customdata
+ * @param {string} 			    key
+ * @param {?Object}	     	    options
+ * @param {?Object|function()} customdata
  * @return {Object}
  */
 Raygun.init = function(key, options, customdata) {};
@@ -41,9 +41,9 @@ Raygun.attach = function () {};
 Raygun.detach = function () {};
 
 /**
- * @param {*} 		  ex
- * @param {?Object}   customData
- * @param {?string[]} tags
+ * @param {*} 		  		   ex
+ * @param {?Object|function()} customdata
+ * @param {?string[]} 		   tags
  * @return {Object}
  */
 Raygun.send = function(ex, customData, tags) {};
