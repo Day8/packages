@@ -18,7 +18,7 @@ var Raygun;
  * @param {?Object|?function()} customdata
  * @return {Object}
  */
-Raygun.init = function(key,|function() options, customdata) {};
+Raygun.init = function(key, options, customdata) {};
 
 /**
  * @param {Object|function()} customdata
