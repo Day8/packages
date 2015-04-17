@@ -93,8 +93,7 @@ Raygun.setFilterScope = function(scope) {};
 Raygun.whitelistCrossOriginDomains = function(whitelist) {};
 
 /**
- * @callback callback
- * @param {Object}
+ * @param {function({Object})} callback
  * @return {Object}
  */
 Raygun.onBeforeSend = function(callback) {};
