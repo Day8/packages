@@ -10,7 +10,7 @@
 (bootlaces! +version+)
 
 (task-options!
-  pom  {:project     'cljsjs/raygun4cljs
+  pom  {:project     'org.clojars.day8/raygun4cljs
         :version     +version+
         :description "Raygun.io plugin"
         :url         "https://github.com/MindscapeHQ/raygun4js"
