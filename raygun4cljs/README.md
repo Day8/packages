@@ -1,8 +1,8 @@
-# cljsjs/raygun4cljs
+# raygun4cljs
 
 [](dependency)
 ```clojure
-[org.clojars.day8/raygun4cljs "1.18.2-0"] ;; latest release
+[raygun4cljs "1.18.2-0"] ;; latest release
 ```
 [](/dependency)
 
@@ -12,7 +12,7 @@ you can require the packaged library like so:
 
 ```clojure
 (ns application.core
-  (:require cljsjs.raygun4cljs :as raygun4cljs))
+  (:require raygun4cljs))
 ```
 # Usage
 ```clojure
@@ -20,10 +20,10 @@ you can require the packaged library like so:
   "Register session with raygun.io providing our app version, a unique session identifier and username.
    This is typically called each time your SPA initialises."
   [version session-id username]
-  (.setVersion raygun version)
-  (.setUser raygun username false nil nil nil (str site ":" username))
+  (.setVersion js/Raygun version)
+  (.setUser js/Raygun username false nil nil nil (str site ":" username))
   (.init
-    raygun
+    js/Raygun
     raygun-api-key
     (clj->js {"debugMode" true "disableAnonymousUserTracking" true})
     (clj->js {"environment" "development"

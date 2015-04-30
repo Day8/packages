@@ -10,12 +10,12 @@
 (bootlaces! +version+)
 
 (task-options!
-  pom  {:project     'org.clojars.day8/raygun4cljs
+  pom  {:project     'raygun4cljs
         :version     +version+
         :description "Raygun.io plugin"
         :url         "https://github.com/MindscapeHQ/raygun4js"
         :license     {"MIT" "http://opensource.org/licenses/MIT"}
-        :scm         {:url "https://github.com/cljsjs/packages"}})
+        :scm         {:url  "https://github.com/Day8/packages"}})
 
 (deftask package []
   (comp
@@ -26,4 +26,4 @@
     (sift :move {#"^raygun\.js"      "cljsjs/raygun4cljs/development/raygun.inc.js"
                  #"^raygun\.min\.js" "cljsjs/raygun4cljs/production/raygun.min.inc.js"})
     (sift :include #{#"^cljsjs"})
-    (deps-cljs :name "cljsjs.raygun4cljs")))
+    (deps-cljs :name "raygun4cljs")))
