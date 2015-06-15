@@ -1,7 +1,7 @@
 (set-env!
   :resource-paths #{"resources"}
   :dependencies '[[adzerk/bootlaces   "0.1.9" :scope "test"]
-                  [cljsjs/boot-cljsjs "0.4.6" :scope "test"]
+                  [cljsjs/boot-cljsjs "0.5.0" :scope "test"]
                   [cljsjs/jquery "1.9.0-0"]])
 
 (require '[adzerk.bootlaces :refer :all]
@@ -13,7 +13,7 @@
   pom  {:project     'cljsjs/flot
         :version     +version+
         :scm         {:url "https://github.com/cljsjs/packages"}
-        :description "flot packaged up with Google Closure externs"
+        :description "Attractive JavaScript plotting for jQuery"
         :url         "http://www.flotcharts.org/"
         :license     {"MIT" "http://opensource.org/licenses/MIT"}
         })

@@ -1,29 +1,29 @@
 (set-env!
   :resource-paths #{"resources"}
   :dependencies '[[adzerk/bootlaces   "0.1.9" :scope "test"]
-                  [cljsjs/boot-cljsjs "0.4.7" :scope "test"]])
+                  [cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
 
 (require '[adzerk.bootlaces :refer :all]
          '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def react-version "0.13.1")
+(def react-version "0.13.3")
 (def +version+ (str react-version "-0"))
 (bootlaces! +version+)
 
 (def urls
   {:normal {:dev (str "http://fb.me/react-" react-version ".js")
-            :dev-checksum "E195BE5D021CBA5062E3C0F4C95DA322"
+            :dev-checksum "EA609A7373B6EF48B3FC3F403C7ED870"
             :min (str "http://fb.me/react-" react-version ".min.js")
-            :min-checksum "26B22E016CBE907215A04DBF03707622"}
+            :min-checksum "C3B6B1BDF51C9EF4BA3473A2E1DCB83A"}
    :with-addons {:dev (str "http://fb.me/react-with-addons-" react-version ".js")
-                 :dev-checksum "F05CBC8CE979D2269947568789ECFDAA"
+                 :dev-checksum "634ECBF4118F756CDED92ACD2EFEC834"
                  :min (str "http://fb.me/react-with-addons-" react-version ".min.js")
-                 :min-checksum "C34D06B5F7840431BCAD2D3130978845"}})
+                 :min-checksum "7FE3B6790A5DB124191DC3D6669AFE38"}})
 
 (task-options!
  pom  {:project     'cljsjs/react
        :version     +version+
-       :description "React.js packaged up with Google Closure externs"
+       :description "A Javascript library for building user interfaces"
        :url         "http://facebook.github.io/react/"
        :scm         {:url "https://github.com/cljsjs/packages"}
        :license     {"BSD" "http://opensource.org/licenses/BSD-3-Clause"}})
@@ -39,8 +39,7 @@
     (deps-cljs :name "cljsjs.react")))
 
 (deftask package-with-addons []
-  (task-options! pom {:project 'cljsjs/react-with-addons
-                      :description "React.js with addons packaged up with Google Closure externs"}
+  (task-options! pom {:project 'cljsjs/react-with-addons}
                  push {:ensure-branch nil})
   (comp
     (download :url (-> urls :with-addons :dev) :checksum (-> urls :with-addons :dev-checksum))

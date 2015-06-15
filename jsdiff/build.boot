@@ -1,7 +1,7 @@
 (set-env!
   :resource-paths #{"resources"}
   :dependencies '[[adzerk/bootlaces   "0.1.9" :scope "test"]
-                  [cljsjs/boot-cljsjs "0.4.6" :scope "test"]])
+                  [cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
 
 (require '[adzerk.bootlaces :refer :all]
          '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -12,7 +12,7 @@
 (task-options!
  pom  {:project     'cljsjs/jsdiff
        :version     +version+
-       :description "JsDiff packaged up with Google Closure externs"
+       :description "A javascript text differencing implementation"
        :url         "https://github.com/kpdecker/jsdiff"
        :scm         {:url "https://github.com/kpdecker/jsdiff"}
        :license     {"BSD" "http://opensource.org/licenses/BSD-3-Clause"}})

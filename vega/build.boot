@@ -1,7 +1,7 @@
 (set-env!
   :resource-paths #{"resources"}
   :dependencies '[[adzerk/bootlaces   "0.1.11" :scope "test"]
-                  [cljsjs/boot-cljsjs "0.4.7" :scope "test"]
+                  [cljsjs/boot-cljsjs "0.5.0" :scope "test"]
                   [cljsjs/d3 "3.5.5-3"]])
 
 (require '[adzerk.bootlaces :refer :all]
@@ -28,7 +28,7 @@
 (task-options!
   pom {:project     'cljsjs/vega
        :version     +version+
-       :description "vega"
+       :description "Vega is a declarative format for creating, saving, and sharing visualization designs"
        :url         "https://vega.github.io/"
        :scm         {:url "https://github.com/cljsjs/packages"}})
 

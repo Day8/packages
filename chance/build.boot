@@ -1,7 +1,7 @@
 (set-env!
   :resource-paths #{"resources"}
   :dependencies '[[adzerk/bootlaces   "0.1.9" :scope "test"]
-                  [cljsjs/boot-cljsjs "0.4.6" :scope "test"]])
+                  [cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
 
 (require '[adzerk.bootlaces :refer :all]
          '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -12,7 +12,7 @@
 (task-options!
  pom  {:project     'cljsjs/chance
        :version     +version+
-       :description "Chance.js packaged up with Google Closure externs"
+       :description "Chance is a minimalist generator of random strings, numbers, etc"
        :url         "http://chancejs.com/"
        :scm         {:url "https://github.com/cljsjs/packages"}
        :license     {"MIT" "http://opensource.org/licenses/MIT"}})

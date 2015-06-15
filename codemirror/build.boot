@@ -1,19 +1,19 @@
 (set-env!
   :resource-paths #{"resources"}
   :dependencies '[[adzerk/bootlaces   "0.1.9" :scope "test"]
-                  [cljsjs/boot-cljsjs "0.4.6" :scope "test"]])
+                  [cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
 
 (require '[adzerk.bootlaces :refer :all]
          '[cljsjs.boot-cljsjs.packaging :refer :all])
 
 (def codemirror-version "5.1.0")
-(def +version+ (str codemirror-version "-0"))
+(def +version+ (str codemirror-version "-2"))
 
 (task-options!
   pom  {:project     'cljsjs/codemirror
         :version     +version+
         :scm         {:url "https://github.com/cljsjs/packages"}
-        :description "Javascript syntax highlighter https://codemirror.net/"
+        :description "CodeMirror is a versatile text editor implemented in JavaScript for the browser"
         :url         "https://codemirror.net/"
         :license     {"MIT" "https://github.com/codemirror/CodeMirror/blob/master/LICENSE"}})
 
@@ -46,7 +46,7 @@
   (comp
     (download :url (format "https://github.com/codemirror/CodeMirror/archive/%s.zip" codemirror-version)
               :unzip true
-              :checksum "5471f9d6dca57a60721e2913ca6a3d96")
+              :checksum "6eb686a8475ed0f0eec5129256028c5b")
     (sift :move {#"^CodeMirror-([\d\.]*)/lib/codemirror\.js"      "cljsjs/codemirror/development/codemirror.inc.js"
                  #"^CodeMirror-([\d\.]*)/lib/codemirror\.css"     "cljsjs/codemirror/development/codemirror.css"
                  #"^CodeMirror-([\d\.]*)/mode/(.*)/(.*).js"       "cljsjs/codemirror/common/mode/$2.js"})

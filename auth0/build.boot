@@ -1,7 +1,7 @@
 (set-env!
   :resource-paths #{"resources"}
   :dependencies '[[adzerk/bootlaces   "0.1.10" :scope "test"]
-                  [cljsjs/boot-cljsjs "0.4.7" :scope "test"]])
+                  [cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
 
 (require '[adzerk.bootlaces :refer :all]
          '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -13,7 +13,7 @@
 (task-options!
  pom { :project     'cljsjs/auth0
        :version     +version+
-       :description "Auth0 JS Lib"
+       :description "auth0.js is a UI-less client-side library for Auth0"
        :url         "https://auth0.com/docs/auth0js"
        :scm         { :url "https://github.com/auth0/auth0.js" }
        :license     { "MIT" "https://github.com/auth0/auth0.js/blob/master/LICENSE.txt" }})

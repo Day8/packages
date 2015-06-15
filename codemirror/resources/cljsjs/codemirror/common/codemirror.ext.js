@@ -5,6 +5,19 @@ var CodeMirrorObj = function() {
 
 };
 
+
+/**
+ * Calculates and returns a {line, ch} object for a zero-based index who's value is relative to the start 
+ * of the editor's text. If the index is out of range of the text then thereturned object is clipped to 
+ * start or end of the text respectively.
+ */ 
+CodeMirrorObj.prototype.posFromIndex = function(off){};
+
+/**
+ * The reverse of posFromIndex.
+ */
+CodeMirrorObj.prototype.indexFromPos = function(coords){};
+
 /**
  * Get the current editor content.
  * @return {string}
@@ -15,6 +28,18 @@ CodeMirrorObj.prototype.getValue = function(){};
  * @param {string} value
  */
 CodeMirrorObj.prototype.setValue = function(value){};
+/**
+ * Register an event handler.
+ * @param {string} event
+ * @param {function()} handler
+ */
+CodeMirrorObj.prototype.on = function (event, handler) {};
+/**
+ * Deregister an event handler.
+ * @param {string} event
+ * @param {function()} handler
+ */
+CodeMirrorObj.prototype.off = function (event, handler) {};
 /**
  * Get the currently selected code.
  * @return {string}

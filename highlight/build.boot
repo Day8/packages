@@ -1,7 +1,7 @@
 (set-env!
   :resource-paths #{"resources"}
   :dependencies '[[adzerk/bootlaces   "0.1.9" :scope "test"]
-                  [cljsjs/boot-cljsjs "0.4.6" :scope "test"]])
+                  [cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
 
 (require '[adzerk.bootlaces :refer :all]
          '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -13,7 +13,7 @@
   pom  {:project     'cljsjs/highlight
         :version     +version+
         :scm         {:url "https://github.com/cljsjs/packages"}
-        :description "Javascript syntax highlighter https://highlightjs.org/"
+        :description "Javascript syntax highlighter"
         :url         "https://highlightjs.org/"
         :license     {"BSD" "http://opensource.org/licenses/BSD-3-Clause"}})
 

@@ -1,7 +1,7 @@
 (set-env!
   :resource-paths #{"resources"}
   :dependencies '[[adzerk/bootlaces   "0.1.9" :scope "test"]
-                  [cljsjs/boot-cljsjs "0.4.6" :scope "test"]])
+                  [cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
 
 (require '[adzerk.bootlaces :refer :all]
          '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -11,7 +11,7 @@
 (task-options!
  pom  {:project     'cljsjs/mustache
        :version     +version+
-       :description "Mustache.js packaged up with Google Closure externs"
+       :description "Minimal templating with {{mustaches}} in JavaScript"
        :url         "https://github.com/janl/mustache.js/"
        :scm         {:url "https://github.com/cljsjs/packages"}
        :license     {"MIT" "http://opensource.org/licenses/MIT"}})
