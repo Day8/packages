@@ -1,8 +1,8 @@
-# cljsjs/hammer
+# cljsjs/device
 
 [](dependency)
 ```clojure
-[cljsjs/hammer "2.0.4-5"] ;; latest release
+[cljsjs/device "0.2.7-0"] ;; latest release
 ```
 [](/dependency)
 
@@ -12,7 +12,7 @@ you can require the packaged library like so:
 
 ```clojure
 (ns application.core
-  (:require cljsjs.hammer))
+  (:require cljsjs.device))
 ```
 
-[flibs]: https://github.com/clojure/clojurescript/wiki/Foreign-Dependencies
+

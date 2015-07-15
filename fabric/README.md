@@ -1,8 +1,8 @@
-# cljsjs/document-register-element
+# cljsjs/fabric
 
 [](dependency)
 ```clojure
-[cljsjs/document-register-element "0.4.3-0"] ;; latest release
+[cljsjs/fabric "1.5.0-0"] ;; latest release
 ```
 [](/dependency)
 
@@ -12,9 +12,7 @@ you can require the packaged library like so:
 
 ```clojure
 (ns application.core
-  (:require cljsjs.document-register-element))
+  (:require cljsjs.fabric))
 ```
-
-`document-register-element` polyfills the Custom Elements specification. Related methods are already defined in externs packaged by the closure compiler thus this module is extern free.
 
 [flibs]: https://github.com/clojure/clojurescript/wiki/Foreign-Dependencies
