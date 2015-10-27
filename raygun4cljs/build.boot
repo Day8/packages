@@ -6,7 +6,7 @@
 (require '[adzerk.bootlaces :refer :all]
          '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def +version+ "1.18.4-0")
+(def +version+ "1.18.7-0")
 (bootlaces! +version+)
 
 (task-options!
@@ -19,10 +19,10 @@
 
 (deftask package []
   (comp
-    (download :url "https://raw.githubusercontent.com/MindscapeHQ/raygun4js/v1.18.4/dist/raygun.js"
-              :checksum "ece4bfee9a3b7ae2225b05145421f7a2")
-    (download :url "https://raw.githubusercontent.com/MindscapeHQ/raygun4js/v1.18.4/dist/raygun.min.js"
-              :checksum "0e94966a1cc2131125110707e6a70c71")
+    (download :url "https://raw.githubusercontent.com/MindscapeHQ/raygun4js/v1.18.7/dist/raygun.js"
+              :checksum "bdedc83bacb64315c67535a36da3a024")
+    (download :url "https://raw.githubusercontent.com/MindscapeHQ/raygun4js/v1.18.7/dist/raygun.min.js"
+              :checksum "d68bf1c0f717e87bc5c5555eff4f179f")
     (sift :move {#"^raygun\.js"      "cljsjs/raygun4cljs/development/raygun.inc.js"
                  #"^raygun\.min\.js" "cljsjs/raygun4cljs/production/raygun.min.inc.js"})
     (sift :include #{#"^cljsjs"})
