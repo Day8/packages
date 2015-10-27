@@ -2,7 +2,7 @@
 
 [](dependency)
 ```clojure
-[cljsjs/mui "0.1.11-0"] ;; latest release
+[cljsjs/mui "0.1.21-0"] ;; latest release
 ```
 [](/dependency)
 
@@ -15,4 +15,4 @@ you can require the packaged library like:
   (:require [cljsjs.mui]))
 ```
 
-[flibs]: https://github.com/clojure/clojurescript/wiki/Foreign-Dependencies
+[flibs]: https://github.com/clojure/clojurescript/wiki/Packaging-Foreign-Dependencies

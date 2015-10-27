@@ -2,7 +2,7 @@
 
 [](dependency)
 ```clojure
-[cljsjs/papaparse "4.1.1-0"] ;; latest release
+[cljsjs/papaparse "4.1.1-1"] ;; latest release
 ```
 [](/dependency)
 
@@ -15,4 +15,4 @@ you can require the packaged library like so:
   (:require cljsjs.papaparse))
 ```
 
-[flibs]: https://github.com/clojure/clojurescript/wiki/Foreign-Dependencies
+[flibs]: https://github.com/clojure/clojurescript/wiki/Packaging-Foreign-Dependencies

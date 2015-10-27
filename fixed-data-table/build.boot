@@ -8,7 +8,7 @@
 (require '[adzerk.bootlaces :refer :all]
          '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def +version+ "0.3.0-0")
+(def +version+ "0.4.6-0")
 (bootlaces! +version+)
 
 (task-options!
@@ -20,8 +20,8 @@
        :license     {"BSD" "http://opensource.org/licenses/BSD-3-Clause"}})
 
 (deftask download-fixed-data-table []
-  (download :url      "https://github.com/facebook/fixed-data-table/archive/v0.3.0.zip"
-            :checksum "3C74FDCC7D87E2AFFE836889B351281C"
+  (download :url      "https://github.com/facebook/fixed-data-table/archive/v0.4.6.zip"
+            :checksum "4C8ED4C7140A7AB64291997515EC1F02"
             :unzip    true))
 
 (deftask package []
@@ -31,10 +31,18 @@
                  "cljsjs/development/fixed-data-table.inc.js"
                  #"^fixed-data-table-.*/dist/fixed-data-table.css"
                  "cljsjs/development/fixed-data-table.inc.css"
+                 #"^fixed-data-table-.*/dist/fixed-data-table-base.css"
+                 "cljsjs/development/fixed-data-table-base.inc.css"
+                 #"^fixed-data-table-.*/dist/fixed-data-table-style.css"
+                 "cljsjs/development/fixed-data-table-style.inc.css"
                  #"^fixed-data-table-.*/dist/fixed-data-table.min.js"
                  "cljsjs/production/fixed-data-table.min.inc.js"
                  #"^fixed-data-table-.*/dist/fixed-data-table.min.css"
-                 "cljsjs/production/fixed-data-table.min.inc.css"})
+                 "cljsjs/production/fixed-data-table.min.inc.css"
+                 #"^fixed-data-table-.*/dist/fixed-data-table-base.min.css"
+                 "cljsjs/production/fixed-data-table-base.min.inc.css"
+                 #"^fixed-data-table-.*/dist/fixed-data-table-style.min.css"
+                 "cljsjs/production/fixed-data-table-style.min.inc.css"})
     (sift :include #{#"^cljsjs"})
     (deps-cljs :name "cljsjs.fixed-data-table"
                :requires ["cljsjs.react" "cljsjs.object-assign-shim"])))

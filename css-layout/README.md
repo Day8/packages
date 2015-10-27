@@ -2,7 +2,7 @@
 
 [](dependency)
 ```clojure
-[cljsjs/css-layout "0.0.2-0"] ;; latest release
+[cljsjs/css-layout "1.0.0-0"] ;; latest release
 ```
 [](/dependency)
 
@@ -15,4 +15,4 @@ you can require the packaged library like so:
   (:require cljsjs.css-layout))
 ```
 
-[flibs]: https://github.com/clojure/clojurescript/wiki/Foreign-Dependencies
+[flibs]: https://github.com/clojure/clojurescript/wiki/Packaging-Foreign-Dependencies

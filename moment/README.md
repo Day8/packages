@@ -2,7 +2,7 @@
 
 [](dependency)
 ```clojure
-[cljsjs/moment "2.9.0-0"] ;; latest release
+[cljsjs/moment "2.10.6-0"] ;; latest release
 ```
 [](/dependency)
 
@@ -27,4 +27,4 @@ You should be able to set Moment to use locales if you first require them.
 (.locale js/moment "fi")
 ```
 
-[flibs]: https://github.com/clojure/clojurescript/wiki/Foreign-Dependencies
+[flibs]: https://github.com/clojure/clojurescript/wiki/Packaging-Foreign-Dependencies

@@ -2,7 +2,7 @@
 
 [](dependency)
 ```clojure
-[cljsjs/fixed-data-table "0.3.0-0"] ;; latest release
+[cljsjs/fixed-data-table "0.4.6-0"] ;; latest release
 ```
 [](/dependency)
 
@@ -14,3 +14,5 @@ you can require the packaged library like so:
 (ns application.core
   (:require cljsjs.fixed-data-table))
 ```
+
+[flibs]: https://github.com/clojure/clojurescript/wiki/Packaging-Foreign-Dependencies
