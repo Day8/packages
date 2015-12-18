@@ -6,19 +6,19 @@
 (require '[adzerk.bootlaces :refer :all]
          '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def react-version "0.14.0")
-(def +version+ (str react-version "-1"))
+(def +lib-version+ "0.14.3")
+(def +version+ (str +lib-version+ "-0"))
 (bootlaces! +version+)
 
 (def urls
-  {:normal {:dev (str "http://fb.me/react-" react-version ".js")
-            :dev-checksum "1BE9B25B760C3E398C1D60615EF3F52E"
-            :min (str "http://fb.me/react-" react-version ".min.js")
-            :min-checksum "D84FECC741A8AC27A08494080164E77B"}
-   :with-addons {:dev (str "http://fb.me/react-with-addons-" react-version ".js")
-                 :dev-checksum "3C364580EA0AAA578C68C119F22AB229"
-                 :min (str "http://fb.me/react-with-addons-" react-version ".min.js")
-                 :min-checksum "592F4D02A9984760E2F0B0178A8655FA"}})
+  {:normal {:dev (str "http://fb.me/react-" +lib-version+ ".js")
+            :dev-checksum "9927B8234985DB453299EB5A4591DD33"
+            :min (str "http://fb.me/react-" +lib-version+ ".min.js")
+            :min-checksum "C3207F7BF39699D4279BA404EA55F163"}
+   :with-addons {:dev (str "http://fb.me/react-with-addons-" +lib-version+ ".js")
+                 :dev-checksum "CFF72F35360E3433F6805F8C4F3305B3"
+                 :min (str "http://fb.me/react-with-addons-" +lib-version+ ".min.js")
+                 :min-checksum "CE4377AE601A9EC6A0870C5C9EF4B7BF"}})
 
 (task-options!
  pom  {:project     'cljsjs/react
@@ -33,8 +33,8 @@
   (comp
     (download :url (-> urls :normal :dev) :checksum (-> urls :normal :dev-checksum))
     (download :url (-> urls :normal :min) :checksum (-> urls :normal :min-checksum))
-    (sift :move {(re-pattern (str "^react-" react-version ".js$"))     "cljsjs/react/development/react.inc.js"
-                 (re-pattern (str "^react-" react-version ".min.js$")) "cljsjs/react/production/react.min.inc.js"})
+    (sift :move {(re-pattern (str "^react-" +lib-version+ ".js$"))     "cljsjs/react/development/react.inc.js"
+                 (re-pattern (str "^react-" +lib-version+ ".min.js$")) "cljsjs/react/production/react.min.inc.js"})
     (sift :include #{#"^cljsjs"})
     (deps-cljs :name "cljsjs.react")))
 
@@ -44,7 +44,7 @@
   (comp
     (download :url (-> urls :with-addons :dev) :checksum (-> urls :with-addons :dev-checksum))
     (download :url (-> urls :with-addons :min) :checksum (-> urls :with-addons :min-checksum))
-    (sift :move {(re-pattern (str "^react-with-addons-" react-version ".js$"))     "cljsjs/react/development/react-with-addons.inc.js"
-                 (re-pattern (str "^react-with-addons-" react-version ".min.js$")) "cljsjs/react/production/react-with-addons.min.inc.js"})
+    (sift :move {(re-pattern (str "^react-with-addons-" +lib-version+ ".js$"))     "cljsjs/react/development/react-with-addons.inc.js"
+                 (re-pattern (str "^react-with-addons-" +lib-version+ ".min.js$")) "cljsjs/react/production/react-with-addons.min.inc.js"})
     (sift :include #{#"^cljsjs"})
     (deps-cljs :name "cljsjs.react")))

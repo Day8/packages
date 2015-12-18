@@ -6,10 +6,10 @@
 (require '[adzerk.bootlaces :refer :all]
          '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def codemirror-version "5.7.0")
-(def codemirror-checksum "0E203131B66E77DE9DCE32E13D56B812")
+(def +lib-version+ "5.8.0")
+(def codemirror-checksum "a0378a6bd7131f04246a40bb3ce00c19")
 
-(def +version+ (str codemirror-version "-1"))
+(def +version+ (str +lib-version+ "-0"))
 
 (task-options!
   pom  {:project     'cljsjs/codemirror
@@ -25,6 +25,7 @@
          '[clojure.string :as string]
          '[boot.util :refer [sh]]
          '[boot.tmpdir :as tmpd])
+
 (defn path->foreign-lib [path]
   {:file     path
    :requires ["cljsjs.codemirror"]
@@ -48,7 +49,7 @@
 
 (deftask package []
   (comp
-    (download :url (format "https://github.com/codemirror/CodeMirror/archive/%s.zip" codemirror-version)
+    (download :url (format "https://github.com/codemirror/CodeMirror/archive/%s.zip" +lib-version+)
               :unzip true
               :checksum codemirror-checksum)
     (sift :move {#"^CodeMirror-([\d\.]*)/lib/codemirror\.js"    "cljsjs/codemirror/development/codemirror.inc.js"
@@ -56,7 +57,8 @@
                  #"^CodeMirror-([\d\.]*)/mode/(.*)/\2\.js"      "cljsjs/codemirror/common/mode/$2.js"
                  #"^CodeMirror-([\d\.]*)/keymap/(.*)\.js"       "cljsjs/codemirror/common/keymap/$2.js"
                  #"^CodeMirror-([\d\.]*)/addon/(.*)/(.*)\.css"  "cljsjs/codemirror/common/addon/$2/$3.css"
-                 #"^CodeMirror-([\d\.]*)/addon/(.*)/(.*)\.js"   "cljsjs/codemirror/common/addon/$2/$3.js"})
+                 #"^CodeMirror-([\d\.]*)/addon/(.*)/(.*)\.js"   "cljsjs/codemirror/common/addon/$2/$3.js"
+                 #"^CodeMirror-([\d\.]*)/theme/(.*)\.css"       "cljsjs/codemirror/common/theme/$2.css"})
     (minify    :in       "cljsjs/codemirror/development/codemirror.inc.js"
                :out      "cljsjs/codemirror/production/codemirror.min.inc.js")
     (minify    :in       "cljsjs/codemirror/development/codemirror.css"
@@ -67,4 +69,3 @@
                  #"^cljsjs/codemirror/common/keymap/(.*)\.js" "cljsjs/codemirror/common/keymap/$1.inc.js"
                  #"^cljsjs/codemirror/common/addon/(.*)/(.*)\.js" "cljsjs/codemirror/common/addon/$1/$2.inc.js"})
     (generate-extra-deps)))
-

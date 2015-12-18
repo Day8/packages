@@ -9,8 +9,8 @@
   '[adzerk.bootlaces :refer :all]
   '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def chartist-version "0.9.4")
-(def +version+ (str chartist-version "-0"))
+(def +lib-version+ "0.9.4")
+(def +version+ (str +lib-version+ "-1"))
 (bootlaces! +version+)
 
 (task-options!
@@ -23,7 +23,7 @@
 
 (defn github [file]
   (str "https://raw.githubusercontent.com/gionkunz/chartist-js/v"
-       chartist-version "/dist/" file))
+       +lib-version+ "/dist/" file))
 
 (deftask package []
   (comp

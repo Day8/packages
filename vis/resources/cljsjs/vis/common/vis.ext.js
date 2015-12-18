@@ -1,3 +1,7 @@
+// Please use https://github.com/jmmk/javascript-externs-generator
+// to generate the externs
+
+
 var vis = {
   "util": {
     "isNumber": function () {},
@@ -653,6 +657,9 @@ var vis = {
               "useImageSize": {
                 "boolean": {}
               },
+              "useBorderWithImage": {
+                "boolean": {}
+              },
               "__type__": {
                 "object": {}
               }
@@ -1010,6 +1017,9 @@ var vis = {
               "useImageSize": {
                 "boolean": {}
               },
+              "useBorderWithImage": {
+                "boolean": {}
+              },
               "__type__": {
                 "object": {}
               }
@@ -1239,6 +1249,9 @@ var vis = {
               "number": {}
             },
             "useImageSize": {
+              "boolean": {}
+            },
+            "useBorderWithImage": {
               "boolean": {}
             },
             "__type__": {
@@ -1917,6 +1930,7 @@ vis.Timeline.prototype = {
   "destroy": function () {},
   "setCustomTime": function () {},
   "getCustomTime": function () {},
+  "setCustomTimeTitle": function () {},
   "addCustomTime": function () {},
   "removeCustomTime": function () {},
   "getVisibleItems": function () {},
@@ -1965,6 +1979,7 @@ vis.Graph2d.prototype = {
   "destroy": function () {},
   "setCustomTime": function () {},
   "getCustomTime": function () {},
+  "setCustomTimeTitle": function () {},
   "addCustomTime": function () {},
   "removeCustomTime": function () {},
   "getVisibleItems": function () {},
@@ -2238,6 +2253,7 @@ vis.timeline.components.CustomTime.prototype = {
   "hide": function () {},
   "setCustomTime": function () {},
   "getCustomTime": function () {},
+  "setCustomTitle": function () {},
   "_onDragStart": function () {},
   "_onDrag": function () {},
   "_onDragEnd": function () {},
@@ -2367,6 +2383,7 @@ vis.timeline.components.ItemSet.prototype = {
   "_onMultiSelectItem": function () {},
   "itemFromTarget": function () {},
   "groupFromTarget": function () {},
+  "_cloneItemData": function () {},
   "_isResized": function () {}
 };
 vis.timeline.components.ItemSet.types.background.prototype = {
